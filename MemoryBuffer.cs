@@ -88,6 +88,22 @@ namespace System.IO {
             Memory.Read(bytes, 0, bytes.Length);
             value = Convert.ToInt32(bytes);
         }
+        
+        /// <summary>Reads a float from the MemoryStream.</summary>
+        /// <param name="value">Variable to write the float value to.</param>
+        public void Read(out float value) {
+            byte[] bytes = new byte[sizeof(float)];
+            Memory.Read(bytes, 0, bytes.Length);
+            value = Convert.ToSingle(bytes);
+        }
+
+        /// <summary>Reads a double from the MemoryStream.</summary>
+        /// <param name="value">Variable to write the double value to.</param>
+        public void Read(out double value) {
+            byte[] bytes = new byte[sizeof(double)];
+            Memory.Read(bytes, 0, bytes.Length);
+            value = Convert.ToDouble(bytes);
+        }
 
         /// <summary>Reads a null-terminated string from the MemoryStream.</summary>
         /// <param name="value">Variable to write the string value to.</param>
